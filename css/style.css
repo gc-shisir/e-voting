@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Utility classes */
+.profile{
+    height: 400px;
+    width: 400px;
+}
+
+
+
+
+/* Voter login main body starts */
+#main-body{
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center !important;
+    align-items: center !important;
+    background:#5758BB; 
+    flex-direction: column;  
+}
+
+#main-body .main-body-title{
+    font-weight: 0.8rem;
+    line-height: 10px;
+    margin-bottom: 0.8rem;
+    margin-top: 1rem;
+}
+
+#main-body form{
+    width: 30vw;
+    background:#9980FA !important;
+    margin:  0  auto;
+    padding: 1rem;
+    border:2px solid #333;
+    border-radius: 0.5rem;
+}
+
+#main-body form .btn{
+    width: 100% !important;
+}
+
+#main-body form .registration-link h5{
+    font-size: 20px;
+    margin-top: 0.4rem;
+}
+
+
+
+/* Voter Registration main body starts */
+#showcase-body{
+    background-color:#5758BB;
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+}
+
+
+
+#showcase-body form{
+    width: 30vw !important;
+    padding: 2rem;
+    background:#9980FA !important;
+    border:2px solid #333;
+    border-radius: 0.5rem;
+    padding: 1 rem;   
+}
+
+/*For admin dashboard*/
+/* #admin-header-section{
+    background: #333 !important; */
+/* } */
