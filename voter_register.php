@@ -12,9 +12,26 @@
         $password=mysqli_real_escape_string($conn,$_POST['password1']);
         $confirmPassword=mysqli_real_escape_string($conn,$_POST['password2']);
 
+        $profile_img=($_FILES['profile_img']);
         $citizenship_copy=($_FILES['citizenship_copy']);
         // var_dump($citizenship_copy);
 
+        // uploading profile image
+        $profileName=$profile_img['name'];
+        $profileTempName=$profile_img['tmp_name'];
+
+        $profileExt=explode('.',$profileName);
+        $proExtCheck=strtolower(end($profileExt));
+
+        $proExtList=array('jpg','jpeg','png');
+
+        if(in_array($proExtCheck,$proExtList)){
+            $profileDestFile='uploads/voters/'.$profileName;
+            // print_r($destFile);
+            move_uploaded_file($profileTempName,$profileDestFile);
+        }
+
+        // uploading citizenship copy
         $fileName=$citizenship_copy['name'];
         $fileTempName=$citizenship_copy['tmp_name'];
 
@@ -24,7 +41,7 @@
         $extList=array('jpg','jpeg','png');
 
         if(in_array($extCheck,$extList)){
-            $destFile='uploads/voters'.$fileName;
+            $destFile='uploads/voters/'.$fileName;
             // print_r($destFile);
             move_uploaded_file($fileTempName,$destFile);
         }
@@ -103,6 +120,10 @@
         <div class="form-group">
             <label for="citizenship">Citizenship ID number</label>
             <input type="text" name="citizenship_id" id="citizenship_id" class="form-control" required value="<?php echo isset($_POST['citizenship_id']) ? $citizenship_id : ""; ?> " >
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Upload a Passport sized photo </label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile" name="profile_img" required value="<?php echo isset($_POST['profile_img']) ? $citizenship_copy : ""; ?> " >
         </div>
         <div class="form-group">
             <label for="exampleFormControlFile1">Upload a copy of Citizenship certificate </label>

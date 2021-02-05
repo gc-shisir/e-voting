@@ -10,8 +10,15 @@
     width: 400px;
 }
 
+h3{
+    font-size: 24px !important;
+}
 
-
+/* Navbar */
+.navbar{
+    background: #5758BB !important;
+    color: #fff;
+}
 
 /* Voter login main body starts */
 #main-body{
@@ -72,6 +79,35 @@
 }
 
 /*For admin dashboard*/
-/* #admin-header-section{
-    background: #333 !important; */
-/* } */
+
+img{
+    width: 160px;
+    height: 160px;
+}
+
+.description{
+    padding: 0 20px;
+}
+
+.logout:hover{
+    background: #99F;
+}
+
+/* For showcase-section */
+#showcase-section{
+    background-color: #9980FA !important;
+    width: 100vw;
+}
+
+.card{
+    padding: 0 !important; 
+    height: auto !important;
+    width: auto !important;
+}
+
+.card-img-top{
+    border-radius: 50%;
+    margin: 4px auto;
+    max-width: 150px !important;
+    max-height: 150px !important;
+}

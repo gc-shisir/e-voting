@@ -4,6 +4,12 @@
     // session_destroy();
 
     $msg='';
+
+    if(isset($_POST['registerLink'])){
+        header('location:voter_register.php');
+    }
+
+
     if(isset($_POST['submit'])){
         $email=htmlspecialchars($_POST['email']);
         $password=htmlspecialchars($_POST['password']);
@@ -63,8 +69,8 @@
             </div>
             <button type="submit" class="btn btn-primary" name="submit">Log in</button>
             <div class="registration-link">
-                <h5 class="text-muted text-center">Not Registered?</h5>
-                <button class="btn btn-primary" id="registerLink" name="registerLink" onclick="window.location.href='./voter-register.php' ">
+                <h5 class="text-muted text-center">Not Registered?</h5> 
+                <button class="btn btn-primary" id="registerLink" name="registerLink" >
                     Register a new voter
                 </button>
             </div>
