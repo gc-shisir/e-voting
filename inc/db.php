@@ -3,7 +3,7 @@
     $user="root";
     $pass="";
     $host="localhost";
-    $database="e-voting";
+    $database="evoting";
 
     $conn=mysqli_connect($host,$user,$pass,$database);
 
