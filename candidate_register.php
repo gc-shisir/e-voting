@@ -40,14 +40,14 @@
             move_uploaded_file($idTempName,$idFileDest);
         }
 
-      // Checking if email is already registered
+      // Checking if candidate is already registered
       $sql="SELECT * FROM candidate WHERE citizenship_id='$citizenship_id' ";            
       $rslt=mysqli_query($conn,$sql);
       echo "result in progress";
       if($rslt){
           $rowCount=mysqli_num_rows($rslt);
           if($rowCount>0){
-              $msg="Email already registered";
+              $msg="Candidate already registered";
           }else{
               $query="INSERT INTO candidate(full_name,position,state,municipality,citizenship_id,citizenship_copy,profile_img)
                           VALUES('$fullName','$position','$municipality','$state', '$citizenship_id','$idFileDest','$profileFileDest') ";

@@ -25,7 +25,7 @@
             if($result){
                 while($row=mysqli_fetch_assoc($result)){
                     $dbEmail=$row['email'];
-                    $dbPass=$row['password1'];
+                    $dbPass=$row['password'];
                     if($email==$dbEmail && $password==$dbPass){
                         session_start();
                         $_SESSION['email']=$dbEmail;
