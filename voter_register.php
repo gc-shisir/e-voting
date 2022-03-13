@@ -31,6 +31,7 @@
             move_uploaded_file($profileTempName,$profileDestFile);
         }
 
+
         // uploading citizenship copy
         $fileName=$citizenship_copy['name'];
         $fileTempName=$citizenship_copy['tmp_name'];
@@ -41,11 +42,12 @@
         $extList=array('jpg','jpeg','png');
 
         if(in_array($extCheck,$extList)){
-            $destFile='uploads/voters/'.$fileName;
+            $voterDestFile='uploads/voters/'.$fileName;
             // print_r($destFile);
-            move_uploaded_file($fileTempName,$destFile);
+            move_uploaded_file($fileTempName,$voterDestFile);
         }
        
+        // password validation
         if(strlen($password)<6 || strlen($confirmPassword)<6){
             $msg="password too short"; 
         }else if($password!=$confirmPassword){
@@ -60,8 +62,8 @@
                 if($rowCount>0){
                     $msg="Email already registered";
                 }else{
-                    $query="INSERT INTO voter(email,full_name,state,municipality,ward,citizenship_id,citizenship_copy,password1,password2)
-                                VALUES('$email','$fullName','$state','$municipality','$ward','$citizenship_id','$destFile','$password','$confirmPassword') ";
+                    $query="INSERT INTO voter(email,full_name,state,municipality,ward,profile,citizenship_id,citizenship_copy,password)
+                                VALUES('$email','$fullName','$state','$municipality','$ward','$profileDestFile','$citizenship_id','$voterDestFile','$password') ";
                 
                     $result=mysqli_query($conn,$query);
         

@@ -26,7 +26,7 @@
     $state=$row['state'];
     $ward=$row['ward'];
     $citizenship_id=$row['citizenship_id'];
-    $profile=$row['citizenship_copy'];
+    $profile=$row['profile'];
     // var_dump($voter_id);
     $displayName=$name;
 
